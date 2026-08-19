@@ -25,13 +25,13 @@ body{
 }
 
 body{
-    background:#ffffff;
+    background:#fff;
 }
 
 
-/* =========================================
+/* =====================================
    MAIN BANNER
-========================================= */
+===================================== */
 
 .banner{
     width:100%;
@@ -44,13 +44,12 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    STATIC LIGHT STRINGS
-========================================= */
+===================================== */
 
 .string{
     position:absolute;
-
     top:0;
 
     width:24%;
@@ -70,9 +69,9 @@ body{
 }
 
 
-/* =========================================
-   WIRE
-========================================= */
+/* =====================================
+   WIRES
+===================================== */
 
 .wire{
     position:absolute;
@@ -102,9 +101,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    BULBS
-========================================= */
+===================================== */
 
 .bulb{
     position:absolute;
@@ -114,7 +113,6 @@ body{
 
     transform-origin:top center;
 }
-
 
 .bulb .cord{
     position:absolute;
@@ -129,7 +127,6 @@ body{
 
     background:#85271d;
 }
-
 
 .bulb .socket{
     position:absolute;
@@ -146,7 +143,6 @@ body{
 
     border-radius:2px 2px 1px 1px;
 }
-
 
 .bulb .glass{
     position:absolute;
@@ -178,9 +174,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    LEFT BULBS
-========================================= */
+===================================== */
 
 .left-string .b1{
     left:5%;
@@ -207,9 +203,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    RIGHT BULBS
-========================================= */
+===================================== */
 
 .right-string .b1{
     right:5%;
@@ -236,16 +232,14 @@ body{
 }
 
 
-/* =========================================
-   LEFT TEXT AREA
-   PROPER VERTICAL CENTER
-========================================= */
+/* =====================================
+   TEXT AREA
+===================================== */
 
 .rakhi-copy{
     position:absolute;
 
     left:5%;
-
     top:50%;
 
     width:50%;
@@ -270,15 +264,11 @@ body{
 }
 
 
-/* =========================================
-   CELEBRATE RAKHI
-   CLEAN - NOT CURSIVE
-========================================= */
+/* MAIN TITLE */
 
 .rakhi-title{
     font-family:
         "Fredoka",
-        "Arial Rounded MT Bold",
         Arial,
         sans-serif;
 
@@ -295,11 +285,9 @@ body{
 
     white-space:nowrap;
 
-    -webkit-text-stroke:
-        2px #ffffff;
+    -webkit-text-stroke:2px #fff;
 
-    paint-order:
-        stroke fill;
+    paint-order:stroke fill;
 
     text-shadow:
         0 3px 0 #a51e18,
@@ -307,9 +295,7 @@ body{
 }
 
 
-/* =========================================
-   SMALL LINE UNDER TITLE
-========================================= */
+/* SUBTITLE */
 
 .rakhi-subtitle{
     margin-top:12px;
@@ -333,9 +319,6 @@ body{
     white-space:nowrap;
 }
 
-
-/* SMALL ACCENT LINE */
-
 .rakhi-subtitle::before{
     content:"";
 
@@ -353,9 +336,9 @@ body{
 }
 
 
-/* =========================================
-   TEXT MOVEMENT
-========================================= */
+/* =====================================
+   TEXT SLIDE
+===================================== */
 
 @keyframes textMove{
 
@@ -368,7 +351,6 @@ body{
             translateY(-50%);
     }
 
-
     40%{
         opacity:1;
 
@@ -376,7 +358,6 @@ body{
             translateX(-120%)
             translateY(-50%);
     }
-
 
     58%{
         opacity:0;
@@ -386,7 +367,6 @@ body{
             translateY(-50%);
     }
 
-
     66%{
         opacity:1;
 
@@ -394,7 +374,6 @@ body{
             translateX(0)
             translateY(-50%);
     }
-
 
     100%{
         opacity:1;
@@ -406,9 +385,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    IMAGE PLAYER
-========================================= */
+===================================== */
 
 .image-player{
     position:absolute;
@@ -423,7 +402,6 @@ body{
 
     pointer-events:none;
 }
-
 
 .image-player img{
     position:absolute;
@@ -443,9 +421,15 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    IMAGE 1
-========================================= */
+
+   FORWARD:
+   1 → 2
+
+   REVERSE:
+   2 → 1
+===================================== */
 
 .image1{
     animation:
@@ -455,25 +439,37 @@ body{
         infinite;
 }
 
-
 @keyframes imageOne{
+
+    /* FIRST 1 */
 
     0%{
         opacity:1;
     }
 
+    /* SWITCH TO 2 */
+
     10%{
         opacity:0;
     }
 
+
+    /* HIDDEN */
+
     10.1%,
-    76%{
+    75.9%{
         opacity:0;
     }
 
-    76.1%{
+
+    /* REVERSE 2 → 1 */
+
+    76%{
         opacity:1;
     }
+
+
+    /* KEEP 1 UNTIL LOOP */
 
     100%{
         opacity:1;
@@ -481,9 +477,15 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    IMAGE 2
-========================================= */
+
+   FORWARD:
+   1 → 2 → 3
+
+   REVERSE:
+   3 → 2 → 1
+===================================== */
 
 .image2{
     animation:
@@ -493,34 +495,56 @@ body{
         infinite;
 }
 
-
 @keyframes imageTwo{
+
+    /* HIDDEN */
 
     0%,
     9.9%{
         opacity:0;
     }
 
+
+    /* 1 → 2 */
+
     10%{
         opacity:1;
     }
 
+
+    /* 2 → 3 */
+
     20%{
         opacity:0;
     }
+
+
+    /* WAIT */
 
     20.1%,
     65.9%{
         opacity:0;
     }
 
+
+    /* =================================
+       REVERSE:
+       3 → 2
+    ================================= */
+
     66%{
         opacity:1;
     }
 
+
+    /* =================================
+       2 → 1
+    ================================= */
+
     76%{
         opacity:0;
     }
+
 
     100%{
         opacity:0;
@@ -528,9 +552,15 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    IMAGE 3
-========================================= */
+
+   SHOW →
+   SLIDE LEFT →
+   STAY →
+   COME BACK RIGHT →
+   THEN SWITCH TO 2
+===================================== */
 
 .image3{
     animation:
@@ -540,8 +570,9 @@ body{
         infinite;
 }
 
-
 @keyframes imageThree{
+
+    /* HIDDEN */
 
     0%,
     19.9%{
@@ -549,10 +580,19 @@ body{
         transform:translateX(0);
     }
 
+
+    /* =================================
+       2 → 3
+       INSTANT
+    ================================= */
+
     20%{
         opacity:1;
         transform:translateX(0);
     }
+
+
+    /* HOLD 3 RIGHT */
 
     31%{
         opacity:1;
@@ -560,11 +600,15 @@ body{
     }
 
 
-    /* RIGHT → LEFT */
+    /* =================================
+       3 SLIDES LEFT
+    ================================= */
 
     41%{
         opacity:1;
-        transform:translateX(-145%);
+
+        transform:
+            translateX(-145%);
     }
 
 
@@ -572,40 +616,59 @@ body{
 
     55%{
         opacity:1;
-        transform:translateX(-145%);
+
+        transform:
+            translateX(-145%);
     }
 
 
-    /* LEFT → RIGHT */
+    /* =================================
+       3 SLIDES BACK RIGHT
+    ================================= */
 
-    65%{
+    64%{
         opacity:1;
-        transform:translateX(0);
+
+        transform:
+            translateX(0);
     }
 
+
+    /* HOLD AT ORIGINAL POSITION */
+
+    65.9%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* =================================
+       INSTANT:
+       3 → 2
+    ================================= */
 
     66%{
-        opacity:1;
-        transform:translateX(0);
-    }
-
-
-    66.1%{
         opacity:0;
-        transform:translateX(0);
+
+        transform:
+            translateX(0);
     }
 
 
     100%{
         opacity:0;
-        transform:translateX(0);
+
+        transform:
+            translateX(0);
     }
 }
 
 
-/* =========================================
-   SIS / BRO WRAPPER
-========================================= */
+/* =====================================
+   SIS / BRO CARD
+===================================== */
 
 .score-wrap{
     position:absolute;
@@ -630,9 +693,7 @@ body{
 }
 
 
-/* =========================================
-   SCORE MOVEMENT
-========================================= */
+/* RIGHT → COME → RETURN RIGHT */
 
 @keyframes scoreMove{
 
@@ -644,14 +705,12 @@ body{
             translateX(150%);
     }
 
-
     44%{
         opacity:1;
 
         transform:
             translateX(0);
     }
-
 
     54%{
         opacity:1;
@@ -660,14 +719,12 @@ body{
             translateX(0);
     }
 
-
     63%{
         opacity:1;
 
         transform:
             translateX(150%);
     }
-
 
     64%,
     100%{
@@ -679,9 +736,9 @@ body{
 }
 
 
-/* =========================================
-   SCORE CARD
-========================================= */
+/* =====================================
+   SCORE DESIGN
+===================================== */
 
 .score-card{
     width:100%;
@@ -690,14 +747,11 @@ body{
 
     border-radius:12px;
 
-    border:
-        2px solid #d0005a;
+    border:2px solid #d0005a;
 
     background:#ffc95f;
 }
 
-
-/* SCORE TOP */
 
 .score-top{
     display:flex;
@@ -709,11 +763,9 @@ body{
 
     background:#d0005a;
 
-    color:#ffffff;
+    color:#fff;
 }
 
-
-/* SCORE SIDE */
 
 .score-side{
     width:50%;
@@ -749,8 +801,6 @@ body{
 }
 
 
-/* SCORE DIVIDER */
-
 .score-divider{
     width:1px;
     height:29px;
@@ -759,8 +809,6 @@ body{
         rgba(255,255,255,.9);
 }
 
-
-/* SCORE MESSAGE */
 
 .score-message{
     height:27px;
@@ -787,9 +835,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    ARROW
-========================================= */
+===================================== */
 
 .arrow-area{
     width:100%;
@@ -800,7 +848,6 @@ body{
 
     display:flex;
 
-    align-items:flex-start;
     justify-content:center;
 }
 
@@ -818,19 +865,17 @@ body{
 
     background:#d0005a;
 
-    color:#ffffff;
+    color:#fff;
 
     font-family:Arial,sans-serif;
 
     font-size:18px;
-
-    line-height:1;
 }
 
 
-/* =========================================
+/* =====================================
    MOBILE
-========================================= */
+===================================== */
 
 @media(max-width:600px){
 
@@ -839,12 +884,8 @@ body{
     }
 
 
-    /* TEXT */
-
     .rakhi-copy{
         left:4%;
-
-        top:50%;
 
         width:54%;
     }
@@ -855,7 +896,7 @@ body{
             clamp(20px,6vw,30px);
 
         -webkit-text-stroke:
-            1.5px #ffffff;
+            1.5px #fff;
     }
 
 
@@ -875,8 +916,6 @@ body{
     }
 
 
-    /* IMAGE */
-
     .image-player{
         right:3px;
 
@@ -885,14 +924,10 @@ body{
     }
 
 
-    /* LIGHT */
-
     .string{
         width:22%;
     }
 
-
-    /* SCORE */
 
     .score-wrap{
         right:5%;
@@ -913,8 +948,6 @@ body{
 
 
     .score-name{
-        margin-top:4px;
-
         font-size:9px;
     }
 
@@ -939,7 +972,7 @@ body{
     }
 
 
-    /* MOBILE 3RD IMAGE */
+    /* 3RD IMAGE MOBILE */
 
     @keyframes imageThree{
 
@@ -969,17 +1002,17 @@ body{
             transform:translateX(-140%);
         }
 
-        65%{
+        64%{
             opacity:1;
             transform:translateX(0);
         }
 
-        66%{
+        65.9%{
             opacity:1;
             transform:translateX(0);
         }
 
-        66.1%,
+        66%,
         100%{
             opacity:0;
             transform:translateX(0);
@@ -989,9 +1022,9 @@ body{
 }
 
 
-/* =========================================
+/* =====================================
    SMALL MOBILE
-========================================= */
+===================================== */
 
 @media(max-width:390px){
 
@@ -1003,8 +1036,6 @@ body{
     .rakhi-copy{
         left:3%;
 
-        top:50%;
-
         width:56%;
     }
 
@@ -1012,8 +1043,6 @@ body{
     .rakhi-title{
         font-size:
             clamp(18px,5.7vw,26px);
-
-        letter-spacing:-.7px;
     }
 
 
@@ -1022,11 +1051,6 @@ body{
 
         font-size:
             clamp(6.2px,1.8vw,8px);
-    }
-
-
-    .rakhi-subtitle::before{
-        width:11px;
     }
 
 
@@ -1073,11 +1097,6 @@ body{
     }
 
 
-    .arrow-area{
-        height:28px;
-    }
-
-
     .score-arrow{
         width:32px;
         height:22px;
@@ -1093,13 +1112,10 @@ body{
 
 <body>
 
-
 <div class="banner">
 
 
-    <!-- =================================
-         STATIC LEFT LIGHTS
-    ================================== -->
+    <!-- LEFT LIGHTS -->
 
     <div class="string left-string">
 
@@ -1133,9 +1149,7 @@ body{
 
 
 
-    <!-- =================================
-         STATIC RIGHT LIGHTS
-    ================================== -->
+    <!-- RIGHT LIGHTS -->
 
     <div class="string right-string">
 
@@ -1169,9 +1183,7 @@ body{
 
 
 
-    <!-- =================================
-         LEFT TEXT
-    ================================== -->
+    <!-- TEXT -->
 
     <div class="rakhi-copy">
 
@@ -1187,14 +1199,7 @@ body{
 
 
 
-    <!-- =================================
-         IMAGE PLAYER
-
-         1 → 2 → 3
-         3 → LEFT
-         3 → RIGHT
-         3 → 2 → 1
-    ================================== -->
+    <!-- IMAGES -->
 
     <div class="image-player">
 
@@ -1220,15 +1225,11 @@ body{
 
 
 
-    <!-- =================================
-         SIS / BRO
-    ================================== -->
+    <!-- SIS / BRO -->
 
     <div class="score-wrap">
 
-
         <div class="score-card">
-
 
             <div class="score-top">
 
@@ -1261,14 +1262,12 @@ body{
 
                 </div>
 
-
             </div>
 
 
             <div class="score-message">
                 Settle the score now
             </div>
-
 
         </div>
 
@@ -1281,12 +1280,10 @@ body{
 
         </div>
 
-
     </div>
 
 
 </div>
-
 
 </body>
 </html>
