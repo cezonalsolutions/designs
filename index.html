@@ -1,1 +1,699 @@
-ok
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CEZOO Rakhi Banner</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+}
+
+body{
+    background:#ffffff;
+}
+
+
+/* =========================================
+   MAIN BANNER
+========================================= */
+
+.banner{
+    width:100%;
+    height:180px;
+
+    position:relative;
+    overflow:hidden;
+
+    background:#ffc95f;
+}
+
+
+/* =========================================
+   CELEBRATE RAKHI
+   ONE FONT - ONE LINE
+========================================= */
+
+.rakhi-title{
+    position:absolute;
+
+    left:5%;
+    top:56%;
+
+    transform:translateY(-50%);
+
+    z-index:10;
+
+    white-space:nowrap;
+
+    font-family:
+        "Arial Rounded MT Bold",
+        "Arial Black",
+        Arial,
+        sans-serif;
+
+    font-size:clamp(20px, 3.5vw, 35px);
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-1px;
+
+    color:#d92d20;
+
+    -webkit-text-stroke:2px #ffffff;
+
+    paint-order:stroke fill;
+
+    text-shadow:
+        0 2px 0 #a51f17,
+        0 4px 5px rgba(120,50,20,.15);
+}
+
+
+/* =========================================
+   IMAGE PLAYER
+========================================= */
+
+.image-player{
+    position:absolute;
+
+    right:8px;
+    bottom:0;
+
+    width:38%;
+    height:72%;
+
+    z-index:5;
+
+    pointer-events:none;
+}
+
+
+.image-player img{
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+    object-position:right bottom;
+
+    opacity:0;
+}
+
+
+/* =========================================
+   3 IMAGE DISPLAY
+========================================= */
+
+.image1{
+    animation:imageOne 9s linear infinite;
+}
+
+.image2{
+    animation:imageTwo 9s linear infinite;
+}
+
+.image3{
+    animation:imageThree 9s linear infinite;
+}
+
+
+@keyframes imageOne{
+
+    0%,29%{
+        opacity:1;
+    }
+
+    33%,96%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+
+@keyframes imageTwo{
+
+    0%,29%{
+        opacity:0;
+    }
+
+    33%,62%{
+        opacity:1;
+    }
+
+    66%,100%{
+        opacity:0;
+    }
+}
+
+
+@keyframes imageThree{
+
+    0%,62%{
+        opacity:0;
+    }
+
+    66%,96%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   LEFT DECORATION
+========================================= */
+
+.left-string{
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:26%;
+    height:52px;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+.left-wire{
+    position:absolute;
+
+    left:-15px;
+    top:-34px;
+
+    width:118%;
+    height:58px;
+
+    border-bottom:2px solid #98251c;
+
+    border-radius:0 0 70% 52%;
+
+    transform:rotate(-4deg);
+}
+
+
+/* =========================================
+   RIGHT DECORATION
+========================================= */
+
+.right-string{
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    width:17%;
+    height:48px;
+
+    z-index:20;
+
+    pointer-events:none;
+}
+
+
+.right-wire{
+    position:absolute;
+
+    right:-14px;
+    top:-34px;
+
+    width:118%;
+    height:57px;
+
+    border-bottom:2px solid #98251c;
+
+    border-radius:0 0 52% 70%;
+
+    transform:rotate(4deg);
+}
+
+
+/* =========================================
+   BULB
+========================================= */
+
+.bulb{
+    position:absolute;
+
+    width:13px;
+    height:23px;
+
+    transform-origin:top center;
+}
+
+
+/* CORD */
+
+.bulb .cord{
+    position:absolute;
+
+    left:50%;
+    top:0;
+
+    width:1.5px;
+    height:6px;
+
+    transform:translateX(-50%);
+
+    background:#85271d;
+}
+
+
+/* SOCKET */
+
+.bulb .socket{
+    position:absolute;
+
+    left:50%;
+    top:5px;
+
+    width:6px;
+    height:5px;
+
+    transform:translateX(-50%);
+
+    background:#60402d;
+
+    border-radius:2px 2px 1px 1px;
+}
+
+
+.bulb .socket::before,
+.bulb .socket::after{
+    content:"";
+
+    position:absolute;
+
+    left:1px;
+    right:1px;
+
+    height:1px;
+
+    background:rgba(255,220,170,.4);
+}
+
+
+.bulb .socket::before{
+    top:1px;
+}
+
+.bulb .socket::after{
+    top:3px;
+}
+
+
+/* =========================================
+   BULB GLASS
+========================================= */
+
+.bulb .glass{
+    position:absolute;
+
+    left:50%;
+    top:9px;
+
+    width:10px;
+    height:12px;
+
+    transform:translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle at 32% 25%,
+            #ffffff 0%,
+            #fff3b2 18%,
+            #ffc84c 52%,
+            #ee921e 100%
+        );
+
+    border-radius:
+        55% 55%
+        45% 45%;
+
+    border:1px solid rgba(190,95,10,.28);
+
+    box-shadow:
+        0 0 3px rgba(255,190,55,.28);
+}
+
+
+/* BULB NECK */
+
+.bulb .glass::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-2px;
+
+    width:5px;
+    height:3px;
+
+    transform:translateX(-50%);
+
+    background:#ee9d28;
+
+    border-radius:3px 3px 1px 1px;
+}
+
+
+/* BULB HIGHLIGHT */
+
+.bulb .glass::after{
+    content:"";
+
+    position:absolute;
+
+    left:2px;
+    top:2px;
+
+    width:2px;
+    height:4px;
+
+    background:rgba(255,255,255,.8);
+
+    border-radius:50%;
+
+    transform:rotate(18deg);
+}
+
+
+/* =========================================
+   LEFT BULBS
+========================================= */
+
+.left-string .b1{
+    left:6%;
+    top:21px;
+
+    transform:rotate(-12deg);
+}
+
+.left-string .b2{
+    left:35%;
+    top:14px;
+
+    transform:rotate(-7deg);
+}
+
+.left-string .b3{
+    left:64%;
+    top:7px;
+
+    transform:rotate(-3deg);
+}
+
+.left-string .b4{
+    left:92%;
+    top:1px;
+
+    transform:rotate(2deg);
+}
+
+
+/* =========================================
+   RIGHT BULBS
+========================================= */
+
+.right-string .b1{
+    right:4%;
+    top:20px;
+
+    transform:rotate(12deg);
+}
+
+.right-string .b2{
+    right:38%;
+    top:13px;
+
+    transform:rotate(7deg);
+}
+
+.right-string .b3{
+    right:72%;
+    top:6px;
+
+    transform:rotate(3deg);
+}
+
+
+/* =========================================
+   DOTS
+========================================= */
+
+.dot{
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:#fff7e3;
+
+    border-radius:50%;
+}
+
+
+.left-string .dot1{
+    left:20%;
+    top:19px;
+}
+
+.left-string .dot2{
+    left:49%;
+    top:11px;
+}
+
+.left-string .dot3{
+    left:78%;
+    top:5px;
+}
+
+
+.right-string .dot1{
+    right:20%;
+    top:18px;
+}
+
+.right-string .dot2{
+    right:54%;
+    top:10px;
+}
+
+.right-string .dot3{
+    right:86%;
+    top:4px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+    .banner{
+        height:155px;
+    }
+
+
+    .rakhi-title{
+        left:4%;
+
+        font-size:clamp(18px, 5.8vw, 27px);
+
+        letter-spacing:-1px;
+
+        -webkit-text-stroke:1.5px #ffffff;
+    }
+
+
+    .image-player{
+        right:3px;
+
+        width:39%;
+        height:68%;
+    }
+
+
+    .left-string{
+        width:29%;
+    }
+
+
+    .right-string{
+        width:16%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:390px){
+
+    .banner{
+        height:145px;
+    }
+
+
+    .rakhi-title{
+        left:3%;
+
+        font-size:clamp(17px, 5.5vw, 23px);
+
+        letter-spacing:-.8px;
+    }
+
+
+    .image-player{
+        right:2px;
+
+        width:40%;
+        height:65%;
+    }
+
+
+    .left-string{
+        width:31%;
+    }
+
+
+    .right-string{
+        width:16%;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="banner">
+
+
+    <!-- LEFT THREAD -->
+
+    <div class="left-string">
+
+        <div class="left-wire"></div>
+
+        <div class="bulb b1">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <div class="bulb b2">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <div class="bulb b3">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <div class="bulb b4">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>
+        <span class="dot dot3"></span>
+
+    </div>
+
+
+
+    <!-- RIGHT THREAD -->
+
+    <div class="right-string">
+
+        <div class="right-wire"></div>
+
+        <div class="bulb b1">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <div class="bulb b2">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <div class="bulb b3">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>
+        <span class="dot dot3"></span>
+
+    </div>
+
+
+
+    <!-- SINGLE FONT TITLE -->
+
+    <div class="rakhi-title">
+        Celebrate Rakhi
+    </div>
+
+
+
+    <!-- 3 IMAGES -->
+
+    <div class="image-player">
+
+        <img src="1.png" class="image1" alt="">
+
+        <img src="2.png" class="image2" alt="">
+
+        <img src="3.png" class="image3" alt="">
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
