@@ -6,6 +6,10 @@
 
 <title>CEZOO Rakhi Banner</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
 
 /* =========================================
@@ -44,191 +48,7 @@ body{
 
 
 /* =========================================
-   CELEBRATE RAKHI TITLE
-========================================= */
-
-.rakhi-title{
-    position:absolute;
-
-    left:5%;
-    top:56%;
-
-    transform:translateY(-50%);
-
-    z-index:10;
-
-    white-space:nowrap;
-
-    font-family:
-        "Arial Rounded MT Bold",
-        "Trebuchet MS",
-        Arial,
-        sans-serif;
-
-    font-size:clamp(20px, 3.5vw, 35px);
-
-    font-weight:900;
-
-    line-height:1;
-
-    letter-spacing:-0.8px;
-
-    color:#d92d20;
-
-    -webkit-text-stroke:2px #ffffff;
-
-    paint-order:stroke fill;
-
-    text-shadow:
-        0 2px 0 #a51f17,
-        0 4px 5px rgba(120,50,20,.15);
-}
-
-
-/* =========================================
-   IMAGE PLAYER
-========================================= */
-
-.image-player{
-    position:absolute;
-
-    right:8px;
-    bottom:0;
-
-    width:38%;
-    height:72%;
-
-    z-index:5;
-
-    pointer-events:none;
-}
-
-
-.image-player img{
-    position:absolute;
-
-    right:0;
-    bottom:0;
-
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
-    object-position:right bottom;
-
-    opacity:0;
-
-    /* NO SMOOTH TRANSITION */
-
-    transition:none !important;
-}
-
-
-/* =========================================
-   INSTANT IMAGE SWITCHING
-
-   1.png
-   ↓
-   2.png
-   ↓
-   3.png
-   ↓
-   repeat
-
-   NO FADE
-========================================= */
-
-.image1{
-    animation:
-        show1
-        3s
-        steps(1,end)
-        infinite;
-}
-
-
-.image2{
-    animation:
-        show2
-        3s
-        steps(1,end)
-        infinite;
-}
-
-
-.image3{
-    animation:
-        show3
-        3s
-        steps(1,end)
-        infinite;
-}
-
-
-/* IMAGE 1 */
-
-@keyframes show1{
-
-    0%{
-        opacity:1;
-    }
-
-    33.333%{
-        opacity:0;
-    }
-
-    100%{
-        opacity:0;
-    }
-}
-
-
-/* IMAGE 2 */
-
-@keyframes show2{
-
-    0%{
-        opacity:0;
-    }
-
-    33.333%{
-        opacity:1;
-    }
-
-    66.666%{
-        opacity:0;
-    }
-
-    100%{
-        opacity:0;
-    }
-}
-
-
-/* IMAGE 3 */
-
-@keyframes show3{
-
-    0%{
-        opacity:0;
-    }
-
-    33.333%{
-        opacity:0;
-    }
-
-    66.666%{
-        opacity:1;
-    }
-
-    100%{
-        opacity:1;
-    }
-}
-
-
-/* =========================================
-   LEFT + RIGHT STRING
+   STATIC LIGHT STRINGS
 ========================================= */
 
 .string{
@@ -239,16 +59,14 @@ body{
     width:24%;
     height:54px;
 
-    z-index:20;
+    z-index:50;
 
     pointer-events:none;
 }
 
-
 .left-string{
     left:0;
 }
-
 
 .right-string{
     right:0;
@@ -256,7 +74,7 @@ body{
 
 
 /* =========================================
-   WIRES
+   WIRE
 ========================================= */
 
 .wire{
@@ -270,33 +88,25 @@ body{
     border-bottom:2px solid #98251c;
 }
 
-
-/* LEFT WIRE */
-
 .left-string .wire{
     left:-18px;
 
-    border-radius:
-        0 0 70% 55%;
+    border-radius:0 0 70% 55%;
 
     transform:rotate(-4deg);
 }
 
-
-/* RIGHT WIRE */
-
 .right-string .wire{
     right:-18px;
 
-    border-radius:
-        0 0 55% 70%;
+    border-radius:0 0 55% 70%;
 
     transform:rotate(4deg);
 }
 
 
 /* =========================================
-   BULB
+   BULBS
 ========================================= */
 
 .bulb{
@@ -309,9 +119,7 @@ body{
 }
 
 
-/* =========================================
-   BULB CORD
-========================================= */
+/* BULB CORD */
 
 .bulb .cord{
     position:absolute;
@@ -325,14 +133,10 @@ body{
     transform:translateX(-50%);
 
     background:#85271d;
-
-    border-radius:2px;
 }
 
 
-/* =========================================
-   BULB SOCKET
-========================================= */
+/* BULB SOCKET */
 
 .bulb .socket{
     position:absolute;
@@ -345,49 +149,13 @@ body{
 
     transform:translateX(-50%);
 
-    background:
-        linear-gradient(
-            to right,
-            #51301f,
-            #825334,
-            #51301f
-        );
+    background:#68432d;
 
     border-radius:2px 2px 1px 1px;
 }
 
 
-/* SOCKET DETAILS */
-
-.bulb .socket::before,
-.bulb .socket::after{
-    content:"";
-
-    position:absolute;
-
-    left:1px;
-    right:1px;
-
-    height:1px;
-
-    background:
-        rgba(255,225,180,.45);
-}
-
-
-.bulb .socket::before{
-    top:1px;
-}
-
-
-.bulb .socket::after{
-    top:3px;
-}
-
-
-/* =========================================
-   BULB GLASS
-========================================= */
+/* BULB GLASS */
 
 .bulb .glass{
     position:absolute;
@@ -410,191 +178,705 @@ body{
             #ed8c1c 100%
         );
 
-    border-radius:
-        55% 55%
-        46% 46%;
+    border-radius:55% 55% 46% 46%;
 
-    border:
-        1px solid
-        rgba(183,89,8,.30);
+    border:1px solid rgba(183,89,8,.3);
 
     box-shadow:
-        0 0 3px
-        rgba(255,190,55,.30);
-}
-
-
-/* BULB NECK */
-
-.bulb .glass::before{
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:-2px;
-
-    width:5px;
-    height:3px;
-
-    transform:translateX(-50%);
-
-    background:#ee9d28;
-
-    border-radius:
-        3px 3px
-        1px 1px;
-}
-
-
-/* BULB REFLECTION */
-
-.bulb .glass::after{
-    content:"";
-
-    position:absolute;
-
-    left:2px;
-    top:2px;
-
-    width:2px;
-    height:4px;
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.85);
-
-    transform:rotate(18deg);
+        0 0 3px rgba(255,190,55,.3);
 }
 
 
 /* =========================================
-   LEFT BULB POSITIONS
+   LEFT BULBS
 ========================================= */
 
 .left-string .b1{
     left:5%;
     top:22px;
-
     transform:rotate(-12deg);
 }
-
 
 .left-string .b2{
     left:33%;
     top:15px;
-
     transform:rotate(-7deg);
 }
-
 
 .left-string .b3{
     left:61%;
     top:8px;
-
     transform:rotate(-3deg);
 }
-
 
 .left-string .b4{
     left:89%;
     top:2px;
-
     transform:rotate(2deg);
 }
 
 
 /* =========================================
-   RIGHT BULB POSITIONS
-   SAME AS LEFT - MIRRORED
+   RIGHT BULBS
 ========================================= */
 
 .right-string .b1{
     right:5%;
     top:22px;
-
     transform:rotate(12deg);
 }
-
 
 .right-string .b2{
     right:33%;
     top:15px;
-
     transform:rotate(7deg);
 }
-
 
 .right-string .b3{
     right:61%;
     top:8px;
-
     transform:rotate(3deg);
 }
-
 
 .right-string .b4{
     right:89%;
     top:2px;
-
     transform:rotate(-2deg);
 }
 
 
 /* =========================================
-   SMALL DECORATIVE DOTS
+   LEFT TEXT GROUP
 ========================================= */
 
-.dot{
+.rakhi-copy{
     position:absolute;
 
-    width:3px;
-    height:3px;
+    left:5%;
+    top:52%;
 
-    border-radius:50%;
+    width:51%;
 
-    background:#fff7e3;
+    z-index:10;
+
+    transform:
+        translateX(0)
+        translateY(-50%);
+
+    animation:
+        textMove
+        12s
+        ease-in-out
+        infinite;
 }
 
 
-/* LEFT DOTS */
+/* =========================================
+   CELEBRATE RAKHI
+========================================= */
 
-.left-string .dot1{
-    left:19%;
-    top:19px;
+.rakhi-title{
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(23px,4vw,40px);
+
+    font-weight:400;
+
+    line-height:1.15;
+
+    color:#d72b20;
+
+    white-space:nowrap;
+
+    -webkit-text-stroke:
+        1.5px #ffffff;
+
+    paint-order:
+        stroke fill;
+
+    text-shadow:
+        0 2px 0 #a91d18,
+        0 4px 6px rgba(110,45,10,.15);
 }
 
 
-.left-string .dot2{
-    left:47%;
-    top:12px;
+/* =========================================
+   ONE LINE UNDER TITLE
+========================================= */
+
+.rakhi-subtitle{
+    margin-top:10px;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size:
+        clamp(8px,1.35vw,14px);
+
+    font-weight:600;
+
+    line-height:1.2;
+
+    letter-spacing:.1px;
+
+    color:#8f3b27;
+
+    white-space:nowrap;
 }
 
 
-.left-string .dot3{
-    left:75%;
-    top:5px;
+/* =========================================
+   TEXT MOVEMENT
+========================================= */
+
+@keyframes textMove{
+
+    0%,
+    31%{
+        opacity:1;
+
+        transform:
+            translateX(0)
+            translateY(-50%);
+    }
+
+
+    /* MOVE LEFT */
+
+    40%{
+        opacity:1;
+
+        transform:
+            translateX(-120%)
+            translateY(-50%);
+    }
+
+
+    /* STAY LEFT */
+
+    58%{
+        opacity:0;
+
+        transform:
+            translateX(-120%)
+            translateY(-50%);
+    }
+
+
+    /* RETURN */
+
+    66%{
+        opacity:1;
+
+        transform:
+            translateX(0)
+            translateY(-50%);
+    }
+
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateX(0)
+            translateY(-50%);
+    }
 }
 
 
-/* RIGHT DOTS */
+/* =========================================
+   IMAGE PLAYER
+========================================= */
 
-.right-string .dot1{
-    right:19%;
-    top:19px;
+.image-player{
+    position:absolute;
+
+    right:8px;
+    bottom:0;
+
+    width:38%;
+    height:72%;
+
+    z-index:10;
+
+    pointer-events:none;
 }
 
 
-.right-string .dot2{
-    right:47%;
-    top:12px;
+.image-player img{
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+    object-position:right bottom;
+
+    opacity:0;
+
+    transition:none !important;
 }
 
 
-.right-string .dot3{
-    right:75%;
-    top:5px;
+/* =========================================
+   IMAGE 1
+========================================= */
+
+.image1{
+    animation:
+        imageOne
+        12s
+        steps(1,end)
+        infinite;
+}
+
+
+@keyframes imageOne{
+
+    /* FIRST IMAGE */
+
+    0%{
+        opacity:1;
+    }
+
+    10%{
+        opacity:0;
+    }
+
+
+    /* HIDDEN */
+
+    10.1%,
+    76%{
+        opacity:0;
+    }
+
+
+    /* REVERSE RETURNS TO IMAGE 1 */
+
+    76.1%{
+        opacity:1;
+    }
+
+
+    100%{
+        opacity:1;
+    }
+}
+
+
+/* =========================================
+   IMAGE 2
+========================================= */
+
+.image2{
+    animation:
+        imageTwo
+        12s
+        steps(1,end)
+        infinite;
+}
+
+
+@keyframes imageTwo{
+
+    0%,
+    9.9%{
+        opacity:0;
+    }
+
+
+    /* 1 → 2 */
+
+    10%{
+        opacity:1;
+    }
+
+
+    /* 2 → 3 */
+
+    20%{
+        opacity:0;
+    }
+
+
+    20.1%,
+    65.9%{
+        opacity:0;
+    }
+
+
+    /* 3 → 2 */
+
+    66%{
+        opacity:1;
+    }
+
+
+    /* 2 → 1 */
+
+    76%{
+        opacity:0;
+    }
+
+
+    100%{
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   IMAGE 3
+========================================= */
+
+.image3{
+    animation:
+        imageThree
+        12s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes imageThree{
+
+    0%,
+    19.9%{
+        opacity:0;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* IMAGE 3 */
+
+    20%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* STAY RIGHT */
+
+    31%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* SLIDE LEFT */
+
+    41%{
+        opacity:1;
+
+        transform:
+            translateX(-145%);
+    }
+
+
+    /* STAY LEFT */
+
+    55%{
+        opacity:1;
+
+        transform:
+            translateX(-145%);
+    }
+
+
+    /* COME BACK RIGHT */
+
+    65%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    66%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* THEN IMAGE 2 */
+
+    66.1%{
+        opacity:0;
+
+        transform:
+            translateX(0);
+    }
+
+
+    100%{
+        opacity:0;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================
+   SIS / BRO WRAPPER
+========================================= */
+
+.score-wrap{
+    position:absolute;
+
+    right:7%;
+    top:34%;
+
+    width:140px;
+
+    z-index:30;
+
+    opacity:0;
+
+    transform:
+        translateX(150%);
+
+    animation:
+        scoreMove
+        12s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================
+   SIS / BRO MOVEMENT
+========================================= */
+
+@keyframes scoreMove{
+
+    0%,
+    36%{
+        opacity:0;
+
+        transform:
+            translateX(150%);
+    }
+
+
+    /* COME FROM RIGHT */
+
+    44%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* STAY */
+
+    54%{
+        opacity:1;
+
+        transform:
+            translateX(0);
+    }
+
+
+    /* GO BACK RIGHT */
+
+    63%{
+        opacity:1;
+
+        transform:
+            translateX(150%);
+    }
+
+
+    64%,
+    100%{
+        opacity:0;
+
+        transform:
+            translateX(150%);
+    }
+}
+
+
+/* =========================================
+   SCORE CARD
+========================================= */
+
+.score-card{
+    width:100%;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    border:
+        2px solid #d0005a;
+
+    background:#ffc95f;
+}
+
+
+/* =========================================
+   SCORE TOP
+========================================= */
+
+.score-top{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    height:48px;
+
+    background:#d0005a;
+
+    color:#ffffff;
+}
+
+
+/* =========================================
+   SIS / BRO SIDE
+========================================= */
+
+.score-side{
+    width:50%;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-weight:700;
+}
+
+
+.score-number{
+    font-size:20px;
+
+    line-height:.85;
+}
+
+
+.score-name{
+    margin-top:5px;
+
+    font-size:10px;
+
+    line-height:1;
+}
+
+
+/* =========================================
+   SCORE DIVIDER
+========================================= */
+
+.score-divider{
+    width:1px;
+    height:29px;
+
+    background:
+        rgba(255,255,255,.9);
+}
+
+
+/* =========================================
+   SCORE MESSAGE
+========================================= */
+
+.score-message{
+    height:27px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:0 5px;
+
+    font-family:
+        "Poppins",
+        Arial,
+        sans-serif;
+
+    font-size:8px;
+
+    font-weight:600;
+
+    color:#bd2545;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================
+   ARROW AREA
+========================================= */
+
+.arrow-area{
+    width:100%;
+
+    height:33px;
+
+    padding-top:4px;
+
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    overflow:visible;
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.score-arrow{
+    width:36px;
+    height:24px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:#d0005a;
+
+    color:#ffffff;
+
+    font-family:Arial,sans-serif;
+
+    font-size:18px;
+
+    line-height:1;
 }
 
 
@@ -609,16 +891,30 @@ body{
     }
 
 
-    /* TITLE */
+    /* TEXT */
+
+    .rakhi-copy{
+        left:4%;
+        top:51%;
+
+        width:54%;
+    }
+
 
     .rakhi-title{
-        left:4%;
-
         font-size:
-            clamp(18px,5.8vw,27px);
+            clamp(20px,6.2vw,30px);
 
         -webkit-text-stroke:
-            1.5px #ffffff;
+            1.2px #ffffff;
+    }
+
+
+    .rakhi-subtitle{
+        margin-top:8px;
+
+        font-size:
+            clamp(7px,2.1vw,10px);
     }
 
 
@@ -632,18 +928,135 @@ body{
     }
 
 
-    /* THREAD */
+    /* LIGHTS */
 
     .string{
         width:22%;
-        height:48px;
     }
 
 
-    .wire{
-        top:-34px;
+    /* SCORE */
 
-        height:56px;
+    .score-wrap{
+        right:5%;
+        top:30%;
+
+        width:125px;
+    }
+
+
+    .score-top{
+        height:44px;
+    }
+
+
+    .score-number{
+        font-size:18px;
+    }
+
+
+    .score-name{
+        margin-top:4px;
+
+        font-size:9px;
+    }
+
+
+    .score-divider{
+        height:26px;
+    }
+
+
+    .score-message{
+        height:24px;
+
+        font-size:7px;
+    }
+
+
+    .arrow-area{
+        height:30px;
+
+        padding-top:3px;
+    }
+
+
+    .score-arrow{
+        width:34px;
+        height:23px;
+
+        font-size:17px;
+    }
+
+
+    /* IMAGE 3 MOBILE */
+
+    @keyframes imageThree{
+
+        0%,
+        19.9%{
+            opacity:0;
+
+            transform:
+                translateX(0);
+        }
+
+
+        20%{
+            opacity:1;
+
+            transform:
+                translateX(0);
+        }
+
+
+        31%{
+            opacity:1;
+
+            transform:
+                translateX(0);
+        }
+
+
+        41%{
+            opacity:1;
+
+            transform:
+                translateX(-140%);
+        }
+
+
+        55%{
+            opacity:1;
+
+            transform:
+                translateX(-140%);
+        }
+
+
+        65%{
+            opacity:1;
+
+            transform:
+                translateX(0);
+        }
+
+
+        66%{
+            opacity:1;
+
+            transform:
+                translateX(0);
+        }
+
+
+        66.1%,
+        100%{
+            opacity:0;
+
+            transform:
+                translateX(0);
+        }
     }
 
 }
@@ -660,11 +1073,25 @@ body{
     }
 
 
-    .rakhi-title{
+    .rakhi-copy{
         left:3%;
+        top:51%;
+
+        width:56%;
+    }
+
+
+    .rakhi-title{
+        font-size:
+            clamp(19px,5.8vw,26px);
+    }
+
+
+    .rakhi-subtitle{
+        margin-top:7px;
 
         font-size:
-            clamp(17px,5.5vw,23px);
+            clamp(6.5px,1.9vw,8.5px);
     }
 
 
@@ -676,8 +1103,51 @@ body{
     }
 
 
-    .string{
-        width:23%;
+    .score-wrap{
+        right:4%;
+        top:27%;
+
+        width:115px;
+    }
+
+
+    .score-top{
+        height:40px;
+    }
+
+
+    .score-number{
+        font-size:16px;
+    }
+
+
+    .score-name{
+        font-size:8px;
+    }
+
+
+    .score-divider{
+        height:23px;
+    }
+
+
+    .score-message{
+        height:22px;
+
+        font-size:6.5px;
+    }
+
+
+    .arrow-area{
+        height:28px;
+    }
+
+
+    .score-arrow{
+        width:32px;
+        height:22px;
+
+        font-size:16px;
     }
 
 }
@@ -700,13 +1170,11 @@ body{
 
         <div class="wire"></div>
 
-
         <div class="bulb b1">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
-
 
         <div class="bulb b2">
             <span class="cord"></span>
@@ -714,24 +1182,17 @@ body{
             <span class="glass"></span>
         </div>
 
-
         <div class="bulb b3">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
 
-
         <div class="bulb b4">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
-
-
-        <span class="dot dot1"></span>
-        <span class="dot dot2"></span>
-        <span class="dot dot3"></span>
 
     </div>
 
@@ -745,13 +1206,11 @@ body{
 
         <div class="wire"></div>
 
-
         <div class="bulb b1">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
-
 
         <div class="bulb b2">
             <span class="cord"></span>
@@ -759,13 +1218,11 @@ body{
             <span class="glass"></span>
         </div>
 
-
         <div class="bulb b3">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
-
 
         <div class="bulb b4">
             <span class="cord"></span>
@@ -773,21 +1230,24 @@ body{
             <span class="glass"></span>
         </div>
 
-
-        <span class="dot dot1"></span>
-        <span class="dot dot2"></span>
-        <span class="dot dot3"></span>
-
     </div>
 
 
 
     <!-- =================================
-         TITLE
+         LEFT TEXT
     ================================== -->
 
-    <div class="rakhi-title">
-        Celebrate Rakhi
+    <div class="rakhi-copy">
+
+        <div class="rakhi-title">
+            Celebrate Rakhi
+        </div>
+
+        <div class="rakhi-subtitle">
+            A bond that grows stronger every year
+        </div>
+
     </div>
 
 
@@ -795,11 +1255,11 @@ body{
     <!-- =================================
          IMAGE PLAYER
 
-         NO FADE
-         NO SLIDE
-         NO ZOOM
-
-         1 → 2 → 3 → REPEAT
+         1 → 2 → 3
+         3 → LEFT
+         3 → BACK RIGHT
+         3 → 2 → 1
+         REPEAT
     ================================== -->
 
     <div class="image-player">
@@ -821,6 +1281,78 @@ body{
             class="image3"
             alt=""
         >
+
+    </div>
+
+
+
+    <!-- =================================
+         SIS / BRO CARD
+    ================================== -->
+
+    <div class="score-wrap">
+
+        <div class="score-card">
+
+
+            <div class="score-top">
+
+
+                <!-- SIS -->
+
+                <div class="score-side">
+
+                    <div class="score-number">
+                        1
+                    </div>
+
+                    <div class="score-name">
+                        Sis
+                    </div>
+
+                </div>
+
+
+                <div class="score-divider"></div>
+
+
+                <!-- BRO -->
+
+                <div class="score-side">
+
+                    <div class="score-number">
+                        0
+                    </div>
+
+                    <div class="score-name">
+                        Bro
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="score-message">
+                Settle the score now
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ARROW -->
+
+        <div class="arrow-area">
+
+            <div class="score-arrow">
+                →
+            </div>
+
+        </div>
+
 
     </div>
 
