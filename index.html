@@ -8,6 +8,10 @@
 
 <style>
 
+/* =========================================
+   RESET
+========================================= */
+
 *{
     margin:0;
     padding:0;
@@ -40,8 +44,7 @@ body{
 
 
 /* =========================================
-   CELEBRATE RAKHI
-   ONE FONT - ONE LINE
+   CELEBRATE RAKHI TITLE
 ========================================= */
 
 .rakhi-title{
@@ -58,7 +61,7 @@ body{
 
     font-family:
         "Arial Rounded MT Bold",
-        "Arial Black",
+        "Trebuchet MS",
         Arial,
         sans-serif;
 
@@ -68,7 +71,7 @@ body{
 
     line-height:1;
 
-    letter-spacing:-1px;
+    letter-spacing:-0.8px;
 
     color:#d92d20;
 
@@ -114,86 +117,127 @@ body{
     object-position:right bottom;
 
     opacity:0;
+
+    /* NO SMOOTH TRANSITION */
+
+    transition:none !important;
 }
 
 
 /* =========================================
-   3 IMAGE DISPLAY
+   INSTANT IMAGE SWITCHING
+
+   1.png
+   ↓
+   2.png
+   ↓
+   3.png
+   ↓
+   repeat
+
+   NO FADE
 ========================================= */
 
 .image1{
-    animation:imageOne 9s linear infinite;
+    animation:
+        show1
+        3s
+        steps(1,end)
+        infinite;
 }
+
 
 .image2{
-    animation:imageTwo 9s linear infinite;
+    animation:
+        show2
+        3s
+        steps(1,end)
+        infinite;
 }
+
 
 .image3{
-    animation:imageThree 9s linear infinite;
+    animation:
+        show3
+        3s
+        steps(1,end)
+        infinite;
 }
 
 
-@keyframes imageOne{
+/* IMAGE 1 */
 
-    0%,29%{
+@keyframes show1{
+
+    0%{
         opacity:1;
     }
 
-    33%,96%{
+    33.333%{
         opacity:0;
     }
 
     100%{
-        opacity:1;
-    }
-}
-
-
-@keyframes imageTwo{
-
-    0%,29%{
-        opacity:0;
-    }
-
-    33%,62%{
-        opacity:1;
-    }
-
-    66%,100%{
         opacity:0;
     }
 }
 
 
-@keyframes imageThree{
+/* IMAGE 2 */
 
-    0%,62%{
+@keyframes show2{
+
+    0%{
         opacity:0;
     }
 
-    66%,96%{
+    33.333%{
         opacity:1;
+    }
+
+    66.666%{
+        opacity:0;
     }
 
     100%{
         opacity:0;
+    }
+}
+
+
+/* IMAGE 3 */
+
+@keyframes show3{
+
+    0%{
+        opacity:0;
+    }
+
+    33.333%{
+        opacity:0;
+    }
+
+    66.666%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:1;
     }
 }
 
 
 /* =========================================
-   LEFT DECORATION
+   LEFT + RIGHT STRING
 ========================================= */
 
-.left-string{
+.string{
     position:absolute;
 
-    left:0;
     top:0;
 
-    width:26%;
-    height:52px;
+    width:24%;
+    height:54px;
 
     z-index:20;
 
@@ -201,54 +245,51 @@ body{
 }
 
 
-.left-wire{
+.left-string{
+    left:0;
+}
+
+
+.right-string{
+    right:0;
+}
+
+
+/* =========================================
+   WIRES
+========================================= */
+
+.wire{
     position:absolute;
 
-    left:-15px;
-    top:-34px;
+    top:-35px;
 
-    width:118%;
-    height:58px;
+    width:120%;
+    height:60px;
 
     border-bottom:2px solid #98251c;
+}
 
-    border-radius:0 0 70% 52%;
+
+/* LEFT WIRE */
+
+.left-string .wire{
+    left:-18px;
+
+    border-radius:
+        0 0 70% 55%;
 
     transform:rotate(-4deg);
 }
 
 
-/* =========================================
-   RIGHT DECORATION
-========================================= */
+/* RIGHT WIRE */
 
-.right-string{
-    position:absolute;
+.right-string .wire{
+    right:-18px;
 
-    right:0;
-    top:0;
-
-    width:17%;
-    height:48px;
-
-    z-index:20;
-
-    pointer-events:none;
-}
-
-
-.right-wire{
-    position:absolute;
-
-    right:-14px;
-    top:-34px;
-
-    width:118%;
-    height:57px;
-
-    border-bottom:2px solid #98251c;
-
-    border-radius:0 0 52% 70%;
+    border-radius:
+        0 0 55% 70%;
 
     transform:rotate(4deg);
 }
@@ -262,13 +303,15 @@ body{
     position:absolute;
 
     width:13px;
-    height:23px;
+    height:24px;
 
     transform-origin:top center;
 }
 
 
-/* CORD */
+/* =========================================
+   BULB CORD
+========================================= */
 
 .bulb .cord{
     position:absolute;
@@ -282,10 +325,14 @@ body{
     transform:translateX(-50%);
 
     background:#85271d;
+
+    border-radius:2px;
 }
 
 
-/* SOCKET */
+/* =========================================
+   BULB SOCKET
+========================================= */
 
 .bulb .socket{
     position:absolute;
@@ -298,11 +345,19 @@ body{
 
     transform:translateX(-50%);
 
-    background:#60402d;
+    background:
+        linear-gradient(
+            to right,
+            #51301f,
+            #825334,
+            #51301f
+        );
 
     border-radius:2px 2px 1px 1px;
 }
 
+
+/* SOCKET DETAILS */
 
 .bulb .socket::before,
 .bulb .socket::after{
@@ -315,13 +370,15 @@ body{
 
     height:1px;
 
-    background:rgba(255,220,170,.4);
+    background:
+        rgba(255,225,180,.45);
 }
 
 
 .bulb .socket::before{
     top:1px;
 }
+
 
 .bulb .socket::after{
     top:3px;
@@ -347,19 +404,23 @@ body{
         radial-gradient(
             circle at 32% 25%,
             #ffffff 0%,
-            #fff3b2 18%,
-            #ffc84c 52%,
-            #ee921e 100%
+            #fff6c9 15%,
+            #ffd665 38%,
+            #ffb22f 68%,
+            #ed8c1c 100%
         );
 
     border-radius:
         55% 55%
-        45% 45%;
+        46% 46%;
 
-    border:1px solid rgba(190,95,10,.28);
+    border:
+        1px solid
+        rgba(183,89,8,.30);
 
     box-shadow:
-        0 0 3px rgba(255,190,55,.28);
+        0 0 3px
+        rgba(255,190,55,.30);
 }
 
 
@@ -380,11 +441,13 @@ body{
 
     background:#ee9d28;
 
-    border-radius:3px 3px 1px 1px;
+    border-radius:
+        3px 3px
+        1px 1px;
 }
 
 
-/* BULB HIGHLIGHT */
+/* BULB REFLECTION */
 
 .bulb .glass::after{
     content:"";
@@ -397,75 +460,90 @@ body{
     width:2px;
     height:4px;
 
-    background:rgba(255,255,255,.8);
-
     border-radius:50%;
+
+    background:
+        rgba(255,255,255,.85);
 
     transform:rotate(18deg);
 }
 
 
 /* =========================================
-   LEFT BULBS
+   LEFT BULB POSITIONS
 ========================================= */
 
 .left-string .b1{
-    left:6%;
-    top:21px;
+    left:5%;
+    top:22px;
 
     transform:rotate(-12deg);
 }
 
+
 .left-string .b2{
-    left:35%;
-    top:14px;
+    left:33%;
+    top:15px;
 
     transform:rotate(-7deg);
 }
 
+
 .left-string .b3{
-    left:64%;
-    top:7px;
+    left:61%;
+    top:8px;
 
     transform:rotate(-3deg);
 }
 
+
 .left-string .b4{
-    left:92%;
-    top:1px;
+    left:89%;
+    top:2px;
 
     transform:rotate(2deg);
 }
 
 
 /* =========================================
-   RIGHT BULBS
+   RIGHT BULB POSITIONS
+   SAME AS LEFT - MIRRORED
 ========================================= */
 
 .right-string .b1{
-    right:4%;
-    top:20px;
+    right:5%;
+    top:22px;
 
     transform:rotate(12deg);
 }
 
+
 .right-string .b2{
-    right:38%;
-    top:13px;
+    right:33%;
+    top:15px;
 
     transform:rotate(7deg);
 }
 
+
 .right-string .b3{
-    right:72%;
-    top:6px;
+    right:61%;
+    top:8px;
 
     transform:rotate(3deg);
 }
 
 
+.right-string .b4{
+    right:89%;
+    top:2px;
+
+    transform:rotate(-2deg);
+}
+
+
 /* =========================================
-   DOTS
+   SMALL DECORATIVE DOTS
 ========================================= */
 
 .dot{
@@ -474,41 +552,49 @@ body{
     width:3px;
     height:3px;
 
-    background:#fff7e3;
-
     border-radius:50%;
+
+    background:#fff7e3;
 }
 
 
+/* LEFT DOTS */
+
 .left-string .dot1{
-    left:20%;
+    left:19%;
     top:19px;
 }
 
+
 .left-string .dot2{
-    left:49%;
-    top:11px;
+    left:47%;
+    top:12px;
 }
 
+
 .left-string .dot3{
-    left:78%;
+    left:75%;
     top:5px;
 }
 
 
+/* RIGHT DOTS */
+
 .right-string .dot1{
-    right:20%;
-    top:18px;
+    right:19%;
+    top:19px;
 }
+
 
 .right-string .dot2{
-    right:54%;
-    top:10px;
+    right:47%;
+    top:12px;
 }
 
+
 .right-string .dot3{
-    right:86%;
-    top:4px;
+    right:75%;
+    top:5px;
 }
 
 
@@ -523,16 +609,20 @@ body{
     }
 
 
+    /* TITLE */
+
     .rakhi-title{
         left:4%;
 
-        font-size:clamp(18px, 5.8vw, 27px);
+        font-size:
+            clamp(18px,5.8vw,27px);
 
-        letter-spacing:-1px;
-
-        -webkit-text-stroke:1.5px #ffffff;
+        -webkit-text-stroke:
+            1.5px #ffffff;
     }
 
+
+    /* IMAGE */
 
     .image-player{
         right:3px;
@@ -542,13 +632,18 @@ body{
     }
 
 
-    .left-string{
-        width:29%;
+    /* THREAD */
+
+    .string{
+        width:22%;
+        height:48px;
     }
 
 
-    .right-string{
-        width:16%;
+    .wire{
+        top:-34px;
+
+        height:56px;
     }
 
 }
@@ -568,9 +663,8 @@ body{
     .rakhi-title{
         left:3%;
 
-        font-size:clamp(17px, 5.5vw, 23px);
-
-        letter-spacing:-.8px;
+        font-size:
+            clamp(17px,5.5vw,23px);
     }
 
 
@@ -582,13 +676,8 @@ body{
     }
 
 
-    .left-string{
-        width:31%;
-    }
-
-
-    .right-string{
-        width:16%;
+    .string{
+        width:23%;
     }
 
 }
@@ -599,14 +688,18 @@ body{
 
 <body>
 
+
 <div class="banner">
 
 
-    <!-- LEFT THREAD -->
+    <!-- =================================
+         LEFT FESTIVAL LIGHTS
+    ================================== -->
 
-    <div class="left-string">
+    <div class="string left-string">
 
-        <div class="left-wire"></div>
+        <div class="wire"></div>
+
 
         <div class="bulb b1">
             <span class="cord"></span>
@@ -614,17 +707,20 @@ body{
             <span class="glass"></span>
         </div>
 
+
         <div class="bulb b2">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
 
+
         <div class="bulb b3">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
+
 
         <div class="bulb b4">
             <span class="cord"></span>
@@ -632,6 +728,7 @@ body{
             <span class="glass"></span>
         </div>
 
+
         <span class="dot dot1"></span>
         <span class="dot dot2"></span>
         <span class="dot dot3"></span>
@@ -640,11 +737,14 @@ body{
 
 
 
-    <!-- RIGHT THREAD -->
+    <!-- =================================
+         RIGHT FESTIVAL LIGHTS
+    ================================== -->
 
-    <div class="right-string">
+    <div class="string right-string">
 
-        <div class="right-wire"></div>
+        <div class="wire"></div>
+
 
         <div class="bulb b1">
             <span class="cord"></span>
@@ -652,17 +752,27 @@ body{
             <span class="glass"></span>
         </div>
 
+
         <div class="bulb b2">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
 
+
         <div class="bulb b3">
             <span class="cord"></span>
             <span class="socket"></span>
             <span class="glass"></span>
         </div>
+
+
+        <div class="bulb b4">
+            <span class="cord"></span>
+            <span class="socket"></span>
+            <span class="glass"></span>
+        </div>
+
 
         <span class="dot dot1"></span>
         <span class="dot dot2"></span>
@@ -672,7 +782,9 @@ body{
 
 
 
-    <!-- SINGLE FONT TITLE -->
+    <!-- =================================
+         TITLE
+    ================================== -->
 
     <div class="rakhi-title">
         Celebrate Rakhi
@@ -680,20 +792,41 @@ body{
 
 
 
-    <!-- 3 IMAGES -->
+    <!-- =================================
+         IMAGE PLAYER
+
+         NO FADE
+         NO SLIDE
+         NO ZOOM
+
+         1 → 2 → 3 → REPEAT
+    ================================== -->
 
     <div class="image-player">
 
-        <img src="1.png" class="image1" alt="">
+        <img
+            src="1.png"
+            class="image1"
+            alt=""
+        >
 
-        <img src="2.png" class="image2" alt="">
+        <img
+            src="2.png"
+            class="image2"
+            alt=""
+        >
 
-        <img src="3.png" class="image3" alt="">
+        <img
+            src="3.png"
+            class="image3"
+            alt=""
+        >
 
     </div>
 
 
 </div>
+
 
 </body>
 </html>
